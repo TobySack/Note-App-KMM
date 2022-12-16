@@ -73,7 +73,7 @@ fun NoteListScreen(
                 )
 
                 this@Column.AnimatedVisibility(
-                    visible = state.isSearchActive,
+                    visible = !state.isSearchActive,
                     enter = fadeIn(),
                     exit = fadeOut()
                 ) {
