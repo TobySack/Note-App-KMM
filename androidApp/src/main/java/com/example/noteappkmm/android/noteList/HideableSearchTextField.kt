@@ -1,8 +1,6 @@
 package com.example.noteappkmm.android.noteList
 
-import androidx.compose.animation.AnimatedVisibility
-import androidx.compose.animation.fadeIn
-import androidx.compose.animation.fadeOut
+import androidx.compose.animation.*
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -19,6 +17,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 
+@OptIn(ExperimentalAnimationApi::class)
 @Composable
 fun HideableSearchTextField(
     text: String,
@@ -31,13 +30,13 @@ fun HideableSearchTextField(
     Box(modifier = modifier) {
         AnimatedVisibility(
             visible = isSearchActive,
-            enter = fadeIn(),
-            exit = fadeOut()
+            enter = scaleIn(),
+            exit = scaleOut()
         ) {
             OutlinedTextField(
                 value = text,
                 onValueChange = onTextChanged,
-                shape = RoundedCornerShape(50.dp),
+                shape = RoundedCornerShape(5.dp),
                 placeholder = { Text(text = "Search") },
                 modifier = Modifier
                     .fillMaxWidth()
@@ -55,7 +54,7 @@ fun HideableSearchTextField(
             IconButton(onClick = onCloseClick) {
                 Icon(
                     imageVector = Icons.Default.Close,
-                    contentDescription = "Close search"
+                    contentDescription = "Close Search"
                 )
             }
         }
@@ -69,7 +68,7 @@ fun HideableSearchTextField(
             IconButton(onClick = onSearchClick) {
                 Icon(
                     imageVector = Icons.Default.Search,
-                    contentDescription = "Open search"
+                    contentDescription = "Open Search"
                 )
             }
         }

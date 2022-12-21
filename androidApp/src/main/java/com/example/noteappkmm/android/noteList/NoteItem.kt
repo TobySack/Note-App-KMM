@@ -52,7 +52,7 @@ fun NoteItem(
             )
             Icon(
                 imageVector = Icons.Default.Close,
-                contentDescription = "Delete note",
+                contentDescription = "Delete Note",
                 modifier = Modifier
                     .clickable(MutableInteractionSource(), null) {
                         onDeleteClick()

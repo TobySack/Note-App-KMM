@@ -46,7 +46,7 @@ fun NoteListScreen(
             ) {
                 Icon(
                     imageVector = Icons.Default.Add,
-                    contentDescription = "Add note",
+                    contentDescription = "Add Note",
                     tint = Color.White
                 )
             }
@@ -78,7 +78,7 @@ fun NoteListScreen(
                     exit = fadeOut()
                 ) {
                     Text(
-                        text = "All notes",
+                        text = "My Notes",
                         fontWeight = FontWeight.Bold,
                         fontSize = 30.sp
                     )

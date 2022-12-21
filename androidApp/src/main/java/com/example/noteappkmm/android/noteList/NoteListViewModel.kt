@@ -6,6 +6,8 @@ import androidx.lifecycle.viewModelScope
 import com.example.noteappkmm.domain.note.Note
 import com.example.noteappkmm.domain.note.NoteDataSource
 import com.example.noteappkmm.domain.note.SearchNotes
+import com.example.noteappkmm.domain.time.DateTimeUtil
+import com.example.noteappkmm.presentation.RedOrangeHex
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.combine
