@@ -80,6 +80,9 @@ class NoteDetailViewModel @Inject constructor(
 
     fun saveNote() {
         viewModelScope.launch {
+            if(noteTitle.value.isNullOrEmpty()) {
+                return@launch
+            }
             noteDataSource.insertNote(
                 Note(
                     id = existingNoteId,
